@@ -160,7 +160,7 @@ Project Link: [https://CVRGlobalM1PlaneAlert.dev.novavoidhowl.uk](https://CVRGlo
 [forks-url]: https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert/network/members
 [issues-shield]: https://img.shields.io/github/issues/NovaVoidHowl/CVRGlobalM1PlaneAlert.svg?style=plastic
 [issues-url]: https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert/issues
-[license-shield]: https://img.shields.io/badge/Dual_License-CC_BY_ND_4.0_+_CC_BY_NC_4.0-blue
+[license-shield]: https://img.shields.io/badge/LGPL%202.1-blue
 [license-url]: https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert/blob/master/LICENSE.md
 [stars-shield]: https://img.shields.io/github/stars/NovaVoidHowl/CVRGlobalM1PlaneAlert.svg?style=plastic
 [stars-url]: https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert/stargazers
