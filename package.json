@@ -1,0 +1,25 @@
+{
+  "author": {
+    "email": "me@novavoidhowl.com",
+    "name": "NovaVoidHowl",
+    "url": "https://novavoidhowl.uk/"
+  },
+  "changelogUrl": "https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert/releases",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.0.2",
+    "com.unity.vectorgraphics": "2.0.0-preview.21"
+  },
+  "description": "A simple tool to to provide a warning if you are about to upload an avatar with a global Magica 1 plane collider.",
+  "displayName": "CVR Global M1 Plane Alert",
+  "documentationUrl": "https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert/blob/main/README.md",
+  "keywords": [],
+  "licensesUrl": "https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert/blob/main/LICENSE.md",
+  "name": "uk.novavoidhowl.dev.cvrglobalm1planealert",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NovaVoidHowl/CVRGlobalM1PlaneAlert.git"
+  },
+  "unity": "2021.3",
+  "unityRelease": "23f1",
+  "version": "1.0.0"
+}

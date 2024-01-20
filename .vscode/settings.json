@@ -1,0 +1,36 @@
+{
+  "cSpell.enableFiletypes": [
+    "UnityUXML"
+  ],
+  "cSpell.words": [
+    "asmdef",
+    "autofix",
+    "Behaviour",
+    "Blendshape",
+    "Chillout",
+    "CVRCCK",
+    "IMGUI",
+    "LICENCE",
+    "Magica",
+    "Newtonsoft",
+    "novavoidhowl",
+    "nvhpmm",
+    "packagecore",
+    "stylesheet",
+    "subfolders",
+    "Unversioned",
+    "UXML",
+    "vectorgraphics"
+  ],
+  "colorize.hide_current_line_decorations": false,
+  "colorize.languages": [
+    "UnityUSS"
+  ],
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.rulers": [
+    120
+  ],
+  "editor.tabSize": 2,
+  "vscord.enabled": true
+}

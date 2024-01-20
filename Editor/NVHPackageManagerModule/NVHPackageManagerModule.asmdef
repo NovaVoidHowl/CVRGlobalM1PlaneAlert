@@ -1,0 +1,16 @@
+{
+  "name": "uk.novavoidhowl.dev.cvrglobalm1planealert.nvhpmm",
+  "references": [
+    "UnityEngine.CoreModule",
+    "UnityEditor.CoreModule",
+    "uk.novavoidhowl.dev.cvrglobalm1planealert.packagecore"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": []
+}

@@ -1,0 +1,107 @@
+// { "version": "1.0.0" , "canInstall": true , "optional": false , "defineSymbolSuffix": "_AS", dependencies: []}
+#if UNITY_EDITOR && CVR_CCK_EXISTS && CCK_ADDIN_MAGICACLOTHSUPPORT
+
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using ABI.CCK.Scripts.Editor;
+using ABI.CCK.Components;
+using MagicaCloth;
+using System.Reflection;
+
+namespace uk.novavoidhowl.dev.cvrglobalm1planealert
+{
+  public class GlobalPlaneWarnerOnBuild
+  {
+    static GlobalPlaneWarnerOnBuild()
+    {
+      CCK_BuildUtility.PreAvatarBundleEvent.AddListener(OnPreBundleEvent);
+    }
+
+    [RuntimeInitializeOnLoadMethod]
+    static void RunOnStart()
+    {
+      // Find all active game objects with a CVRAvatar component
+      var avatars = GameObject.FindObjectsOfType<CVRAvatar>();
+
+      foreach (var avatar in avatars)
+      {
+        // Run CheckPlaneColliders against these game objects
+        CheckPlaneColliders(avatar.gameObject);
+      }
+    }
+
+    private static void OnPreBundleEvent(GameObject uploadedObject)
+    {
+      // if uploadedObject is null, do nothing
+      if (uploadedObject == null) return;
+
+      CheckPlaneColliders(uploadedObject);
+    }
+
+    private static void CheckPlaneColliders(GameObject uploadedObject)
+    {
+      // ok so uploadedObject is not null, so we can check it
+      // check down the hierarchy for a 'MagicaPlaneCollider' components (which is what we want to check for, there may be more than one)
+      var planeColliders = uploadedObject.GetComponentsInChildren<MagicaPlaneCollider>();
+
+      // if there are no MagicaPlaneColliders, do nothing
+      if (planeColliders.Length == 0) return;
+
+      // ok so there are some MagicaPlaneColliders, so we can check them
+
+      // for each MagicaPlaneCollider, check if its 'isGlobal' property is true
+      foreach (var planeCollider in planeColliders)
+      {
+        // Use reflection to get the value of the isGlobal field
+        var field = typeof(MagicaPlaneCollider).GetField("isGlobal", BindingFlags.NonPublic | BindingFlags.Instance);
+        bool isGlobal = (bool)field.GetValue(planeCollider);
+
+        // if the planeCollider is global, do nothing
+        if (isGlobal)
+        {
+          // get the gameobject that the planeCollider is attached to
+          var planeColliderGameObject = planeCollider.gameObject;
+
+          // popup a warning message box, to warn the user that they are uploading a global plane collider
+          // ask them if they want to make it local
+          if (EditorUtility.DisplayDialog(
+                                           "Magica 1 Global Plane Waring",
+                                           "Global plane collider detected.\n" +
+                                           "The gameObject with the collider at the hierarchy path: \n" +
+                                            GetGameObjectPath(planeColliderGameObject) + "\n\n" +
+                                           "This will cause problems.\n\n" +
+                                           "Do you want to make this plane collider local?",
+                                           "Yes",
+                                           "No"
+                                         )
+          )
+          {
+            // if they want to make it local, use reflection to set the isGlobal field to false
+            field.SetValue(planeCollider, false);
+          }
+          else
+          {
+            // if they don't want to make it local, do nothing
+          }
+
+        }
+      }
+    }
+
+    private static string GetGameObjectPath(GameObject obj)
+    {
+      string path = "/" + obj.name;
+      while (obj.transform.parent != null)
+      {
+        obj = obj.transform.parent.gameObject;
+        path = "/" + obj.name + path;
+      }
+      return path;
+    }
+
+  }
+
+}
+
+#endif

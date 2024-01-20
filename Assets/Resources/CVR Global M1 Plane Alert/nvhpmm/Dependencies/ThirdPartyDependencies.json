@@ -1,0 +1,44 @@
+[
+  {
+    "Buttons": [
+      {
+        "ButtonLink": "https://docs.abinteractive.net/cck/setup/",
+        "ButtonText": "View CVR CCK Website"
+      }
+    ],
+    "DependencyType": "Mandatory",
+    "Description": "CVR CCK package",
+    "InstallCheckMode": "Scripting Define Symbol",
+    "InstallCheckValue": "CVR_CCK_EXISTS",
+    "Name": "CVR CCK"
+  },
+  {
+    "Buttons": [
+      {
+        "ButtonLink": "https://assetstore.unity.com/packages/tools/physics/magica-cloth-160144",
+        "ButtonText": "Magica Cloth 1 Asset Store Page"
+      }
+    ],
+    "DependencyType": "Mandatory",
+    "Description": "Magica Cloth 1, from unity store",
+    "InstallCheckMode": "File Exists",
+    "InstallCheckValue": "Assets/MagicaCloth/MagicaCloth.asmdef",
+    "Name": "Magica Cloth 1"
+  },
+  {
+    "Buttons": [],
+    "DependencyType": "Mandatory",
+    "Description": "Newtonsoft.Json package from unity registry",
+    "InstallCheckMode": "Package Manager Implicit",
+    "InstallCheckValue": "com.unity.nuget.newtonsoft-json",
+    "Name": "Newtonsoft.Json"
+  },
+  {
+    "Buttons": [],
+    "DependencyType": "Mandatory",
+    "Description": "Unity vector graphics package from unity registry",
+    "InstallCheckMode": "Package Manager Implicit",
+    "InstallCheckValue": "com.unity.vectorgraphics",
+    "Name": "Unity Vector Graphics"
+  }
+]
