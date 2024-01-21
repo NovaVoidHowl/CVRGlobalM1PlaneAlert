@@ -11,11 +11,17 @@ using System.Reflection;
 
 namespace uk.novavoidhowl.dev.cvrglobalm1planealert
 {
+  [InitializeOnLoad]
   public class GlobalPlaneWarnerOnBuild
   {
     static GlobalPlaneWarnerOnBuild()
     {
+      // attach to OnPreBundleEvent event
       CCK_BuildUtility.PreAvatarBundleEvent.AddListener(OnPreBundleEvent);
+      
+      // console print to show that the event has been attached
+      Debug.Log("[CVR Global M1 Plane Alert] ModuleInstallOnBuild attached to OnPreBundleEvent");
+
     }
 
     [RuntimeInitializeOnLoadMethod]
