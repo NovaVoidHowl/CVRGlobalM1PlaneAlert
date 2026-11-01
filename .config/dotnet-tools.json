@@ -3,7 +3,7 @@
   "tools": {
     "CSharpier": {
       "commands": [
-        "dotnet-csharpier"
+        "csharpier"
       ],
       "version": "1.3.0"
     }
