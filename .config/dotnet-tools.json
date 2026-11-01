@@ -3,9 +3,9 @@
   "tools": {
     "CSharpier": {
       "commands": [
-        "dotnet-csharpier"
+        "csharpier"
       ],
-      "version": "0.22.1"
+      "version": "1.3.0"
     }
   },
   "version": 1
